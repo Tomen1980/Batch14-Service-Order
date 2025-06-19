@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/batch14_order_management
+    username: postgres
+    password: JohnDev1!
+  jpa:
+    properties:
+      hibernate:
+        ddl: none
+        format_sql: true
+
+server:
+  port: 7071
+  servlet:
+    context-path: /order-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
