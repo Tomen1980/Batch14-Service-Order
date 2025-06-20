@@ -2,6 +2,7 @@ package com.order_service.orderservice.service.impl
 
 import com.order_service.orderservice.domain.dto.constant.Constant
 import com.order_service.orderservice.domain.dto.request.ReqOrderDto
+import com.order_service.orderservice.domain.dto.request.ReqReduceDto
 import com.order_service.orderservice.domain.dto.response.OrderItemDetail
 import com.order_service.orderservice.domain.dto.response.ResOrderDto
 import com.order_service.orderservice.domain.entity.OrderEntity
@@ -143,7 +144,9 @@ class OrderServiceImpl (
             for (item in order.items) {
                 productManagementClient.updateStock(
                     productId = item.productId,
-                    quantity = item.quantity
+                    req = ReqReduceDto(
+                        quantity = item.quantity
+                    )
                 )
             }
         }

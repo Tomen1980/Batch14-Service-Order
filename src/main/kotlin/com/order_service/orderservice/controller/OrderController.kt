@@ -55,7 +55,7 @@ class OrderController(
         return ResponseEntity(
             BaseResponse(
                 data = null,
-                message = "Sukses menampilkan data order"
+                message = "Sukses update data order"
             ),
             HttpStatus.CREATED
         )
